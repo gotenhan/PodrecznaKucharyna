@@ -1,0 +1,35 @@
+\documentclass[a4paper,11pt,titlepage,twoside]{mwart}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+
+\frenchspacing
+\linespread{1.5}
+\usepackage{indentfirst}
+\usepackage{a4wide}
+
+\begin{document}
+
+% ---- strona tytułowa
+\begin{titlepage}
+\begin{center}
+\large{Instytut Informatyki Uniwersytetu Wrocławskiego\\Studencka Pracownia Inżynierii Oprogramowania}\\[3.0cm]
+\Large {\bfseries Grupa G8}:\\
+\large Adrian Dyliński, Aron Mojsak\\[4.0cm]
+{ \Huge \bfseries Podręczna kucharyna}\\[0.5cm]
+{ \large \bfseries Szablon}\\
+\vfill
+{\large Wrocław, dnia \today}
+\end{center}
+\end{titlepage}
+
+% ---- pusta strona na odwrocie tytułowej
+\mbox{}
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+% ---- spis treści
+\tableofcontents
+\newpage
+% ---- właściwa część
+\end{document}

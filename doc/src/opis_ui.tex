@@ -1,0 +1,59 @@
+\documentclass[a4paper,11pt,titlepage,twoside]{mwart}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+
+\frenchspacing
+\linespread{1.2}
+\usepackage{indentfirst}
+\usepackage{a4wide}
+
+\begin{document}
+
+% ---- strona tytułowa
+\begin{titlepage}
+\begin{center}
+\large{Instytut Informatyki Uniwersytetu Wrocławskiego\\Studencka Pracownia Inżynierii Oprogramowania}\\[3.0cm]
+\Large {\bfseries Grupa G8:}\\
+\large Adrian Dyliński, Aron Mojsak\\[4.0cm]
+{ \Huge \bfseries Podręczna kucharyna}\\[0.5cm]
+{ \large \bfseries Plan testowania}\\
+\vfill
+{\large Wrocław, dnia \today}
+\end{center}
+\end{titlepage}
+% ---- pusta strona na odwrocie tytułowej
+\mbox{}
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+% ---- spis treści
+\tableofcontents
+\newpage
+% ---- właściwa część
+\section{Wstęp}
+Dokument ten zawiera opis i~plan testowania aplikacji ,,Podręczna kucharyna''. W~dokumencie stosuje się zamiennie terminy aplikacja, program jako oznaczenia aplikacji ,,Podręczna kucharyna'', chyba, że z~kontekstu wyraźnie wynika inaczej. Wszystkie testy są przeprowadzane w~domyślnej konfiguracji. Każdy test przeprowadzany jest co najmniej dwukrotniej: w~,,czystym'' środowisku, (jest jedynym niesystemowym uruchomionym procesem) oraz w~systemie obciążonym innymi programami.
+\section{Testy automatyczne}
+Testy automatyczne przeprowadzane będą w~oparciu o~narzędzia testowania dla systemu Android przygotowane przez Google. 
+
+W~ramach testów automatycznych będą przeprowadzane testy jednostkowe kodu. Każdy programista jest odpowiedzialny za przygotowanie testów jednostkowych do kodu przez siebie pisanego.
+
+Wykonywane będą tzw. stress--tests interfejsu. Polega to na automatycznym ,,klikaniu'' w~elementy interfejsu, aby przetestować czy pod dużym obciążeniem aplikacja nie wyłącza się, nie występują naruszenia ochrony pamięci i~inne niechciane zachowania.
+
+\section{Testy specyficzne dla systemu Android}
+Ponieważ działanie systemu Android i~urządzeń mobilnych różni się znacznie od działania komputerów stacjonarnych, wykonane będą specyficzne testy. Każdy ekran aplikacji musi zostać przetestowany na reakcję na:
+\begin{itemize}
+  \item zmianę orientacji urządzenia,
+  \item nieoczekiwane zakończenie aplikacji z~powodu braku pamięci, rozładowania baterii, zabicie procesu przez użytkownika za pomocą menedżera zadań itp.,
+  \item opuszczenie aplikacji za pomocą wbudowanego w~urządzenie przycisku ,,Ekran główny'' i~późniejszy powrót do aplikacji
+  \item zmiany w~konfiguracji urządzenia (np. zmianę języka, formatu wyświetlania dat itp.)
+\end{itemize}
+Dla każdego z~wyżej wymienionych przypadków sprawdzone zostanie czy aplikacja poprawnie powraca do stanu sprzed zajścia danego zdarzenia i czy aplikacja dalej działa tak jak zaplanowano. Dodatkowo testowany będzie wpływ działania aplikacji na żywotność baterii.
+\section{Testy funkcjonalności}
+Przeprowadzone zostaną test wszystkich funkcji programu. W~szczególności testowana będzie zgodność ze specyfikacją przypadków użycia. Sprawdzona zostanie poprawność operacji na bazie danych.
+
+Importowanie przepisów będzie testowane półautomatycznie. Część testów oparta będzie na komputerowym porównianiu efektu importu specjalnie przygotowanych atrap przepisów z~oczekiwanymi wynikami, część będzie wykonywana w~całości przez testera. Dzięki temu będzie można zobaczyć jak aplikacja zachowuje się w~sytuacjach niestandardowych takich jak na przykład drobna niezgodność importowanego pliku ze specyfikacją formatu.
+
+Na bieżąco będzie również sprawdzana łatwość użytkowania aplikacji. Testy te będą wykonywane przez osoby nie powiązane z~procesem twórczym. Na podstawie ich opinii będą wprowadzane zmiany w~interfejsie programu aby był on przyjazny dla użytkownika.
+
+\end{document}
