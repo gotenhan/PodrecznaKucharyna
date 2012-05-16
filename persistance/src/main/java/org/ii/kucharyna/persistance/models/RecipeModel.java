@@ -2,11 +2,11 @@ package org.ii.kucharyna.persistance.models;
 
 import java.util.ArrayList;
 
-import org.bson.types.ObjectId;
+import de.undercouch.bson4jackson.types.ObjectId;
 
 public class RecipeModel { 
 
-	private ObjectId _id = new ObjectId();
+	private ObjectId _id = null;
 	private String description = null;
 	private String name = null;
 	private String instructions = null;
