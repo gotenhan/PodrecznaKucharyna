@@ -1,5 +1,6 @@
-package podreczna.kucharyna;
+package org.ii.kucharyna.app.activities;
 
+import podreczna.kucharyna.R;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ public class MainActivity extends TabActivity {
         TabHost tabHost = getTabHost();
         
         // Tab for cookbook
-        TabSpec cookbookspec = tabHost.newTabSpec("Ksi¹zka Kucharska");
+        TabSpec cookbookspec = tabHost.newTabSpec("Ksiï¿½zka Kucharska");
         cookbookspec.setIndicator("", getResources().getDrawable(R.drawable.icon_photos_tab));
         Intent cookbookIntent = new Intent(this, RecipiesList.class);
         cookbookspec.setContent(cookbookIntent);

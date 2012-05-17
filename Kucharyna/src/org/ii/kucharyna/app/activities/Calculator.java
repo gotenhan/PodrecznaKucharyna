@@ -1,5 +1,6 @@
-package podreczna.kucharyna;
+package org.ii.kucharyna.app.activities;
 
+import podreczna.kucharyna.R;
 import android.app.Activity;
 import android.os.Bundle;
 

@@ -1,5 +1,6 @@
-package podreczna.kucharyna;
+package org.ii.kucharyna.app.activities;
 
+import podreczna.kucharyna.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

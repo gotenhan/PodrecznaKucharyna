@@ -30,7 +30,7 @@
         <activity android:name=".AddingRecipe"
                     android:label="@string/recipeAdd"></activity>
         
-        <activity android:name=".ShowingRecipe" />
+        <activity android:name="org.ii.kucharyna.app.activities.ShowingRecipe" />
         
     </application>
 

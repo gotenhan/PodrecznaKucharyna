@@ -1,5 +1,6 @@
-package podreczna.kucharyna;
+package org.ii.kucharyna.app.activities;
 
+import podreczna.kucharyna.R;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,10 +12,10 @@ import android.widget.ListView;
 public class RecipiesList extends ListActivity {
 
 	static final String[] RECEPIES = new String[] { "Spaghetti bolognese",
-			"Zupa pomidorowa", "Zupa ogórkowa", "Rosó³", "Barszcz",
-			"Kanapka z serem", "Kanapka z szynk¹", "Krem z pora",
-			"Kotlet schabowy", "Sa³atka owocowa", "Tiramisu", "Surówka z pora",
-			"Naleœniki z twarogiem", "Omlet" };
+			"Zupa pomidorowa", "Zupa ogï¿½rkowa", "Rosï¿½", "Barszcz",
+			"Kanapka z serem", "Kanapka z szynkï¿½", "Krem z pora",
+			"Kotlet schabowy", "Saï¿½atka owocowa", "Tiramisu", "Surï¿½wka z pora",
+			"Naleï¿½niki z twarogiem", "Omlet" };
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

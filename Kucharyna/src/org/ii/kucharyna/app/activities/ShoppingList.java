@@ -1,5 +1,6 @@
-package podreczna.kucharyna;
+package org.ii.kucharyna.app.activities;
 
+import podreczna.kucharyna.R;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
@@ -10,8 +11,8 @@ import android.widget.Toast;
 
 public class ShoppingList extends ListActivity {
 	
-	static final String[] SHOPPING_ITEMS = new String[] { "Chleb", "Makaron", "Mleko", "Mas³o", "Cebula", "Szynka", 
-			"Kawa", "Ry¿", "Jab³ka", "Pomidory", "Zielona herbata", "Banany", "Poziomki", "Oregano", "Tymianek",
+	static final String[] SHOPPING_ITEMS = new String[] { "Chleb", "Makaron", "Mleko", "Masï¿½o", "Cebula", "Szynka", 
+			"Kawa", "Ryï¿½", "Jabï¿½ka", "Pomidory", "Zielona herbata", "Banany", "Poziomki", "Oregano", "Tymianek",
 			"Maliny"};
 
 	@Override
@@ -26,7 +27,7 @@ public class ShoppingList extends ListActivity {
 			public void onClick(View arg0) {
 				AlertDialog.Builder alertDialog = new AlertDialog.Builder(ShoppingList.this);
 				alertDialog.setTitle("Usuwanie...");
-				alertDialog.setMessage("Na pewno chcesz usun¹æ wszystkie zakupy?");
+				alertDialog.setMessage("Na pewno chcesz usunï¿½ï¿½ wszystkie zakupy?");
 	
 				// Setting Icon to Dialog
 				alertDialog.setIcon(R.drawable.delete);

@@ -1,5 +1,6 @@
-package podreczna.kucharyna;
+package org.ii.kucharyna.app.activities;
 
+import podreczna.kucharyna.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -28,7 +29,7 @@ public class AddingRecipe extends Activity {
 			AlertDialog.Builder alertDialog = new AlertDialog.Builder(
 					AddingRecipe.this);
 			alertDialog.setTitle("Usuwanie...");
-			alertDialog.setMessage("Na pewno chcesz usun¹æ przepis?");
+			alertDialog.setMessage("Na pewno chcesz usunï¿½ï¿½ przepis?");
 
 			// Setting Icon to Dialog
 			alertDialog.setIcon(R.drawable.delete);

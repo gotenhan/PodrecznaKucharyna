@@ -3,6 +3,8 @@
 	<name>Kucharyna</name>
 	<comment></comment>
 	<projects>
+		<project>persistance</project>
+		<project>presenter</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
