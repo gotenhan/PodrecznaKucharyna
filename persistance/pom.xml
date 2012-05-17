@@ -23,6 +23,15 @@
   		<groupId>de.undercouch</groupId>
   		<artifactId>bson4jackson</artifactId>
   	</dependency>
+  	<dependency>
+  		<groupId>org.apache.httpcomponents</groupId>
+  		<artifactId>httpclient</artifactId>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.google.mockwebserver</groupId>
+  		<artifactId>mockwebserver</artifactId>
+  		<version>20120401</version>
+  	</dependency>
   </dependencies>
   <dependencyManagement>
   	<dependencies>
@@ -30,6 +39,11 @@
   			<groupId>de.undercouch</groupId>
   			<artifactId>bson4jackson</artifactId>
   			<version>2.0.0</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.apache.httpcomponents</groupId>
+  			<artifactId>httpclient</artifactId>
+  			<version>4.2-beta1</version>
   		</dependency>
   	</dependencies>
   </dependencyManagement>
