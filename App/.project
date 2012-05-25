@@ -3,6 +3,8 @@
 	<name>App</name>
 	<comment></comment>
 	<projects>
+		<project>kucharyna-presenter</project>
+		<project>kucharyna.persistance</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
