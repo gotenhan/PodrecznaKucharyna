@@ -2,7 +2,7 @@ package org.ii.kucharyna;
 
 import java.util.ArrayList;
 
-import org.ii.kucharyna.presenter.MainPresenter;
+import org.ii.kucharyna.presenter.Presenter;
 import org.ii.kucharyna.presenter.views.IRecipeView;
 
 import android.app.Activity;
@@ -11,12 +11,12 @@ import android.widget.TextView;
 
 public class AppActivity extends Activity implements IRecipeView {
 	/** Called when the activity is first created. */
-	private MainPresenter presenter;
+	private Presenter presenter;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		this.presenter = new MainPresenter();
+		this.presenter = new Presenter();
 		presenter.refreshRecipe(this, 1);
 	}
 
