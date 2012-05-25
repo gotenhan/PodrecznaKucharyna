@@ -16,61 +16,66 @@ import com.google.mockwebserver.RecordedRequest;
 
 public class MongoLabCommunicatorTest {
 
-	private class MongoRequestStub extends MongoRequest {
-		String url = "";
+  private class MongoRequestStub extends MongoRequest {
+    String url = "";
 
-		MongoRequestStub(String url) {
-			super("", "", "");
-			this.url = url;
-		}
+    MongoRequestStub(String url) {
+      super("", "", null, "");
+      this.url = url;
+    }
 
-		@Override
-		HttpUriRequest getHttpRequest() throws URISyntaxException {
-			return new HttpGet(this.url);
-		}
-	}
+    @Override
+    HttpUriRequest getHttpRequest() throws URISyntaxException {
+      return new HttpGet(this.url);
+    }
 
-	@Test
-	public void testSendReceive_validResponse() throws IOException,
-			URISyntaxException, InterruptedException {
-		MockWebServer server = new MockWebServer();
-		server.enqueue(new MockResponse().setBody("test response"));
-		server.play();
+    @Override
+    protected String buildPath() {
+      return "";
+    }
+  }
 
-		final URL url = server.getUrl("/test?param=value");
-		MongoRequest mr = new MongoRequestStub(url.toString());
-		MongoLabCommunicator communicator = new MongoLabCommunicator();
-		String response = communicator.sendReceive(mr);
-		assertEquals("test response", response);
+  @Test
+  public void testSendReceive_validResponse() throws IOException,
+      URISyntaxException, InterruptedException {
+    MockWebServer server = new MockWebServer();
+    server.enqueue(new MockResponse().setBody("test response"));
+    server.play();
 
-		assertEquals(1, server.getRequestCount());
-		RecordedRequest rec = server.takeRequest();
-		assertEquals("GET /test?param=value HTTP/1.1", rec.getRequestLine());
-		server.shutdown();
-	}
+    final URL url = server.getUrl("/test?param=value");
+    MongoRequest mr = new MongoRequestStub(url.toString());
+    MongoLabCommunicator communicator = new MongoLabCommunicator();
+    String response = communicator.sendReceive(mr);
+    assertEquals("test response", response);
 
-	@Test
-	public void testSendReceive_retries() throws IOException,
-			URISyntaxException, InterruptedException {
-		MockWebServer server = new MockWebServer();
-		server.enqueue(new MockResponse().setBody("test response")
-				.setBytesPerSecond(0));
-		server.enqueue(new MockResponse().setBody("test response2")
-				.setBytesPerSecond(0));
-		server.enqueue(new MockResponse().setBody("test response3"));
-		server.play();
+    assertEquals(1, server.getRequestCount());
+    RecordedRequest rec = server.takeRequest();
+    assertEquals("GET /test?param=value HTTP/1.1", rec.getRequestLine());
+    server.shutdown();
+  }
 
-		final URL url = server.getUrl("/test?param=value");
-		MongoRequest mr = new MongoRequestStub(url.toString());
-		MongoLabCommunicator communicator = new MongoLabCommunicator();
-		communicator.setSocketTimeout(100);
-		String response = communicator.sendReceive(mr);
-		assertEquals("test response3", response);
+  @Test
+  public void testSendReceive_retries() throws IOException, URISyntaxException,
+      InterruptedException {
+    MockWebServer server = new MockWebServer();
+    server.enqueue(new MockResponse().setBody("test response")
+        .setBytesPerSecond(0));
+    server.enqueue(new MockResponse().setBody("test response2")
+        .setBytesPerSecond(0));
+    server.enqueue(new MockResponse().setBody("test response3"));
+    server.play();
 
-		assertEquals(3, server.getRequestCount());
-		RecordedRequest rec = server.takeRequest();
-		assertEquals("GET /test?param=value HTTP/1.1", rec.getRequestLine());
-		server.shutdown();
-	}
+    final URL url = server.getUrl("/test?param=value");
+    MongoRequest mr = new MongoRequestStub(url.toString());
+    MongoLabCommunicator communicator = new MongoLabCommunicator();
+    communicator.setSocketTimeout(100);
+    String response = communicator.sendReceive(mr);
+    assertEquals("test response3", response);
+
+    assertEquals(3, server.getRequestCount());
+    RecordedRequest rec = server.takeRequest();
+    assertEquals("GET /test?param=value HTTP/1.1", rec.getRequestLine());
+    server.shutdown();
+  }
 
 }

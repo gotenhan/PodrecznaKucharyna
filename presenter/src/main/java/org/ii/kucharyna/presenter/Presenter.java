@@ -6,7 +6,7 @@ import java.util.Arrays;
 import org.ii.kucharyna.persistance.models.RecipeModel;
 import org.ii.kucharyna.presenter.views.IRecipeView;
 
-public class MainPresenter {
+public class Presenter {
 	private ArrayList<RecipeModel> recipes = new ArrayList<RecipeModel>();
 
 	RecipeModel getRecipeStub() {
@@ -25,7 +25,7 @@ public class MainPresenter {
 		return model;
 	}
 
-	public MainPresenter() {
+	public Presenter() {
 		this.recipes.add(getRecipeStub());
 		RecipeModel rm = getRecipeStub();
 		rm.setName("Jajówa po studencku");
