@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1\relax .\kern .5em }Wprowadzenie}{3}
+\contentsline {subsection}{\numberline {1.1\relax .\kern .5em }Cel dokumentu}{3}
+\contentsline {subsection}{\numberline {1.2\relax .\kern .5em }Za\IeC {\l }o\IeC {\.z}enia og\IeC {\'o}lne}{3}
+\contentsline {section}{\numberline {2\relax .\kern .5em }Opis produktu}{3}
+\contentsline {subsection}{\numberline {2.1\relax .\kern .5em }Ksi\IeC {\k a}\IeC {\.z}ka kucharska}{3}
+\contentsline {subsubsection}{\numberline {2.1.1\relax .\kern .5em }Cel}{3}
+\contentsline {subsubsection}{\numberline {2.1.2\relax .\kern .5em }Podstawowe przypadki u\IeC {\.z}ycia}{3}
+\contentsline {subsection}{\numberline {2.2\relax .\kern .5em }Kalkulator warto\IeC {\'s}ci od\IeC {\.z}ywczych}{4}
+\contentsline {subsubsection}{\numberline {2.2.1\relax .\kern .5em }Cel}{4}
+\contentsline {subsubsection}{\numberline {2.2.2\relax .\kern .5em }Podstawowe przypadki u\IeC {\.z}ycia}{4}
+\contentsline {subsection}{\numberline {2.3\relax .\kern .5em }Lista zakup\IeC {\'o}w}{5}
+\contentsline {subsubsection}{\numberline {2.3.1\relax .\kern .5em }Cel}{5}
+\contentsline {subsubsection}{\numberline {2.3.2\relax .\kern .5em }Podstawowe przypadki u\IeC {\.z}ycia}{5}
+\contentsline {section}{\numberline {3\relax .\kern .5em }Wst\IeC {\k e}pne za\IeC {\l }o\IeC {\.z}enia techniczne}{5}

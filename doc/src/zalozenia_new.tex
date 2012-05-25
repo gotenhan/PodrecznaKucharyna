@@ -1,0 +1,108 @@
+\documentclass[12pt,leqno, twoside]{mwart}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{a4wide}
+%-------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1 }}
+\fancyhead[LE]{Podręczna kucharyna. Analiza rynku}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%-------------------------------------------------------------------------
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad #1.}
+\makeatother
+%-------------------------------------------------------------------------
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+Licencjacka Pracownia Oprogramowania \\ Instytut
+Informatyki Uniwersytetu Wrocławskiego \\
+\vspace{4cm}
+\Large Agnieszka Góralczyk, Adrian Dyliński, Dominik Bruliński \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu\\ \textbf{Podręczna kucharyna}\\ \Large Analiza rynku\\
+\vspace{1cm}
+\normalsize \today \\
+\vspace{2cm}
+\normalsize Wersja 0.01
+\end{center}
+
+\newpage
+
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. & Data       & Nr wersji & Autor               & Zmiana \\ \hline
+		1.   & 2012-05-05 & 0.01 & Adrian Dyliński, Aron Mojsak & Utworzenie dokumentu \\ \hline
+		2.  & 2012-05-20 & 0.02 & Dominik Bruliński & Poprawki językowe \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Wprowadzenie}
+  \subsection{Cel dokumentu}
+  Celem dokumentu jest nakreślenie i~scharakteryzowanie podstawowych funkcji aplikacji ,,Podręczna kucharyna'', sposobów i~przypadków użycia tej aplikacji oraz wstępnych założeń technicznych.
+% --- Koncepcja
+  \subsection{Założenia ogólne}
+  Podstawowym celem ,,Podręcznej kucharyny`` jest umożliwienie użytkownikowi kolekcjonowania, przeglądania i wyszukiwania przepisów na potrawy lub koktajle w komputerowej \textbf{książce kucharskiej}. Dodatkowymi funkcjami są \textbf{kalkulator wartości odżywczych} oraz podręczna \textbf{lista zakupów}.
+% --- Opis
+\section{Opis produktu}
+Aplikacja składa się z trzech głównych części. Książka kucharska daje dostęp do bazy przepisów. Kalkulator wartości odżywczych pozwala użytkownikowi obliczać zawartość \textbf{składników odżywczych} w~potrawach i~koktajlach. Lista zakupów jest spisem produktów, które są potrzebne do przyrządzenia wybranych potraw lub koktajli. 
+
+% -- ksiązka kucharska
+\subsection{Książka kucharska}
+\subsubsection{Cel}
+Książka kucharska zawiera przepisy przechowywane w prostej bazie danych. Użytkownik ma do nich dostęp za pomocą przeglądarki przepisów. Przeglądarka umożliwia wyszukiwanie przepisów na podstawie \textbf{etykiet} lub analizy tekstu zawartego w przepisie. Każdy przepis jest etykietowany automatycznie na podstawie \textbf{składników}, użytkownik może wpisać także własne etykiety (np. ,,ostra'', ,,podwieczorek'' itp.). Wyniki wyszukiwania można dodatkowo ograniczyć do przepisów dodanych do bazy w podanym okresie czasu lub zawierających odpowiednie ilości składników odżywczych. Użytkownik może ręcznie wpisywać przepisy oraz importować zewnętrzne bazy przepisów.
+\subsubsection{Podstawowe przypadki użycia}
+\begin{description}
+\item[Dodawanie przepisu] -- użytkownikowi zostaje przedstawiony ekran z~polami do wprowadzenia nazwy potrawy lub koktajlu, opisu, szczegółowego sposobu przygotowania. Możliwe jest także dodawanie składników i~określanie ich ilości. Składniki są wybierane z~bazy, w~przypadku gdy potrzebnego składnika brakuje, użytkownik może go wprowadzić. Użytkownik wybiera lub dodaje etykiety odpowiadające przepisowi.
+\item[Dodawanie składnika] -- użytkownik ma możliwość dodania składników. Użytkownik podaje nazwę, wybiera zdjęcie lub zaznacza ,,brak zdjęcia'', podaje wartości odżywcze na 100~g produktu.
+\item[Wyszukiwanie przepisu] -- użytkownik ma do dyspozycji dwa rodzaje wyszukiwania: proste i~szczegółowe. Po wybraniu wyszukiwania prostego użytkownik wpisuje lub wybiera z~listy etykiety, które go interesują. Wyniki są przedstawiane na żywo, tzn. po wpisaniu następnej etykiety wyniki są filtrowane i~przedstawiane użytkownikowi automatycznie. W~wyszukiwaniu zaawansowanym nie jest wyświetlana lista etykiet, ponieważ wyszukiwanie to polega na szczegółowej analizie tekstu umieszczonego w~przepisach. Z~tego samego powodu wyniki są przedstawiane dopiero po wybraniu operacji ,,szukaj''.
+\item[Przeglądanie przepisów] -- przepisy są wyświetlane w~sposób uporządkowany, według etykiet. W~każdej z~kategorii wyświetla się po 5 przepisów. Przy każdej kategorii znajduje się przycisk ,,więcej'', umożliwiający zobaczenie pozostałych przepisów z~danej kategorii. Kategorie można zwijać (tymczasowo chowając ich zawartość). Istnieje także możliwość wyświetlania tylko niektórych kategorii.
+\item[Import przepisów] -- użytkownik ma możliwość dodania do bazy danych przepisów z~innego źródła. Użytkownik wybiera plik znajdujący się na dysku lub wprowadza odnośnik do przepisu znajdującego się w~sieci Internet. W~trakcie importowania użytkownikowi przedstawiane są informacje o~ewentualnych błędach. Użytkownik ma także wpływ na przebieg importowania: jeśli aplikacja ma problem z~automatycznym dodaniem przepisu do bazy, użytkownik wybiera jedną z~przedstawionych przez nią możliwości. Szczegółowy spis formatów i~witryn, z~których można importować, będzie podany w~przyszłości w~odpowiednim dokumencie.
+\end{description}
+% -- kalkulator wartości odżywczych
+\subsection{Kalkulator wartości odżywczych}
+\subsubsection{Cel}
+Funkcja kalkulatora wartości odżywczych jest skierowana do osób będących na diecie (tzn. świadomie się odżywiających). Dla wybranego produktu spożywczego lub przepisu z ksiązki kucharskiej wyliczona zostanie wartość odżywcza -- ilość kilokalorii, węglowodanów i witamin przypadająca na porcję. Użytkownik może ustalić prosty plan żywieniowy, tj. swoje zapotrzebowanie na odpowiednie składniki odżywcze. Aplikacja wyświetla procentowo, ile z potrzebnych dziennie wartości odżywczych przepis pokrywa.
+\subsubsection{Podstawowe przypadki użycia}
+\begin{description}
+  \item[Wyświetlanie informacji o~wartościach odżywczych] -- informacje na temat zawartośći składników odżywczych w~daniu lub koktajlu lub składniku są wyświetlane podczas przeglądania przepisu lub informacji o~składniku.
+  \item[Plan żywieniowy] -- użytkownik wpisuje w~formularzu swoje dzienne zapotrzebowanie na składniki odżywcze. Formularz umożliwia zróżnicowanie zapotrzebowania w~zależności od dnia tygodnia: dzięki temu użytkownik, wiedząc na przykład, że w~środy potrzebuje więcej kilokalorii ze względu na trening na siłowni, może uwzględnić to w~planie żywieniowym. Podane informacje są wykorzystywane przy wyświetlaniu informacji o~przepisach: użytkownik może przeczytać, ile procent dziennego zapotrzebowania na odpowiednie składniki odżywcze pokrywa dany posiłek lub koktajl.
+  \item[Przygotowanie menu] -- użytkownik wybiera przepisy i~ustala, o~której godzinie i~w~jakim dniu tygodnia będą jedzone dania sporządzone na podstawie wybranych przepisów. W~ten sposób może przygotować sobie plan diety na cały tydzień. Pomocne są dane z~planu żywieniowego, dzięki nim na bieżąco widać ile procent dziennego zapotrzebowania na składniki odżywcze jest pokrywane przez przygotowane menu.
+\end{description}
+% -- lista zakupów
+\subsection{Lista zakupów}
+\subsubsection{Cel}
+Użytkownik wybiera przepisy, zaznacza, które składniki ma w domu, i generuje listę zakupów. Później, będąc w sklepie, może ją łatwo przejrzeć na ekranie urządzenia przenośnego. Możliwość ustalenia \textbf{spiżarni}, czyli podania składników które praktycznie zawsze są w domu (np. rzadko używane przyprawy). Funkcji listy zakupów można także używać niezależnie od pozostałych funkcji aplikacji, czyli wpisywać własne artykuły spożywcze.
+\subsubsection{Podstawowe przypadki użycia}
+\begin{description}
+  \item[Lista zakupów] -- użytkownik wybiera przepisy. Aplikacja automatycznie generuje listę zakupów według danych zawartych w~przepisach. Następnie użytkownik może ją poprawiać dodając składniki, których na liście brakuje i~usuwając składniki, które są zbędne (np. dlatego że ma je w~lodówce).
+  \item[Spiżarnia] -- użytkownik wybiera składniki, które ma w~domu. Zazwyczaj są to składniki, które rzadko się kończą. Przykładowe składniki w~spiżarni to: pieprz, sól, cukier puder. Dane ze spiżarni uwzględniane są przy tworzeniu listy zakupów -- składniki posiadane przez użytkownika nie są do niej dodawane.
+\end{description}
+\section{Wstępne założenia techniczne}
+,,Podręczna kucharyna'' w~pierwszej kolejności jest wykonywana do używania pod kontrolą systemu operacyjnego Android. Projektowana jest jednak z~myślą o~łatwym dostosowaniu także do innych systemów operacyjnych.
+Do przechowywania bazy danych będzie użyty jak najprostszy system zarządzania bazą danych, niekoniecznie obsługujący standard SQL. Szczegóły zostaną ustalone po dokładnym określeniu wymagań. Interfejs graficzny będzie wykonany za pomocą zewnętrznej biblioteki umożliwiającej łatwą adaptację do innych systemów przenośnych.
+
+\end{document}
