@@ -1,0 +1,125 @@
+\documentclass[12pt,leqno, twoside]{mwart}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{a4wide}
+%-------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1 }}
+\fancyhead[LE]{Podręczna kucharyna. Testy}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%-------------------------------------------------------------------------
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad #1.}
+\makeatother
+%-------------------------------------------------------------------------
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+Licencjacka Pracownia Oprogramowania \\ Instytut
+Informatyki Uniwersytetu Wrocławskiego \\
+\vspace{4cm}
+\Large Agnieszka Góralczyk, Adrian Dyliński, Dominik Bruliński \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu\\ \textbf{Podręczna kucharyna}\\ \Large Testy\\
+\vspace{1cm}
+\normalsize \today \\
+\vspace{2cm}
+\normalsize Wersja 0.01
+\end{center}
+
+\newpage
+
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. & Data       & Nr wersji & Autor               & Zmiana \\ \hline
+		1.   & 2012-05-22 & 0.01 & Dominik Bruliński & Utworzenie dokumentu \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Wstęp}
+\noindent Dokument ten zawiera opis i~plan testowania oprogramowania Podręczna kucharyna w~każdej fazie powstawania tego
+oprogramowania.
+
+\section{Testy podczas implementacji}
+\noindent Programista uczestniczący w projekcie odpowiada za dokładne przetestowanie pisanego przez siebie kodu
+źródłowego. Testy powinny zostać wykonane przed umieszczeniem danego fragmentu w~magazynie systemu kontroli wersji.
+Wybór między automatycznym i ręcznym sposobem wykonania tych testów pozostaje w~gestii programistów.
+
+\section{Testowanie funkcjonalności}
+\noindent Przed zakończeniem prac nad projektem Podręczna kucharyna zostaną wykonane testy, mające na celu sprawdzenie
+poprawności implementacji poszczególnych przypadków użycia. Przypadki użycia są opisane w~\cite{APU}. Testy te zostaną wykonane
+przez członków zespołu i~nie będą zautomatyzowane. Osoba testująca będzie wykonywała poszczególne przypadki użycia
+,,krok po kroku''. Tester będzie sprawdzał, czy zachowanie oprogramowania odpowiada założeniom i~stawianym przed
+oprogramowaniem Podręczna kucharyna wymaganiom. W celu przetestowania zachowania oprogramowania w sytuacjach
+niepożądanych tester będzie postępował niezgodnie z przypadkami użycia. Zakłada się, że inforamacje o błędach,
+niepowodzeniach wykonania operacji zostaną przekazane w postaci komunikatów. Każdy z~przypadków testowych jest opisany w
+poniższych podrozdziałach.
+
+\subsection{Uruchomienie aplikacji}
+\subsubsection{Działania testujące}
+\noindent Aplikacja jest uruchamiana zgodnie z~instrukcją. Następnie stan jest kontrolowany w~trakcie wszystkich innych testów.
+
+\subsubsection{Sprawdzenie poprawności}
+\noindent Po każdej interakcji użytkownika z interfejsem następuje sprawdzenie, czy stan aplikacji (polączenie, bazie
+danych) uległ odpowiedniej zmianie. Sprawdza się, czy na przykład po imporcie przepisu z pliku bądź sieci Internet do
+bazy danych został dodany poprawny wpis.
+
+\subsection{Dodawanie przepisu, składnika}
+\subsubsection{Działania testujące}
+\noindent Otwarty zostaje ekran dodawania przepisu bądź składnika, a~następnie wykonywane są kroki opisane w~przypadkach
+użycia.
+
+\subsubsection{Sprawdzenie poprawności}
+\noindent Kontrola działania polega na sprawdzeniu, czy został wyświetlony odpowiedni błąd w przypadku działań
+niepożądanych oraz, czy stan aplikacji zmienił się odpowiednio w~przypadku działań, które powinny odnieść sukces.
+
+\subsection{Wyszukiwanie przepisu, składnika}
+\subsubsection{Działania testujące}
+\noindent Otwarty zostaje ekran wyszukiwania, a~następnie wykonywane są kroki opisane w~przypadkach
+użycia.
+
+\subsubsection{Sprawdzenie poprawności}
+\noindent Następuje sprawdzenie, czy uzyskane rezultaty wyszukiwania są zgodne z oczekiwaniami. Sprawdza się również, czy
+w~przypadku, gdy parametry są niepoprawne, użytkownik zostaje powiadomiony stosownym komunikatem.
+
+\subsection{Wyświetlanie przepisów, składników}
+\subsubsection{Działania testujące}
+\noindent Po otwarciu ekranu wyświetlania przepisów lub składników wykonywane są kroki opisane w~przypadkach użycia. 
+
+\subsubsection{Sprawdzenie poprawności}
+\noindent Sprawdzone zostaje czy wyświetlona została lista elementów z możliwością przejścia do widoku szczegółowego.
+Sprawdza się również, czy w~przypadku szczególnym (np. brak przepisów) użytkownik zostaje powiadomiony stosownym
+komunikatem.
+\newpage
+\begin{thebibliography}{9}
+   \bibitem{APU} Agnieszka Góralczyk, Adrian Dyliński, Dominik Bruliński, {\it Dokumentacja projektu Podręczna
+      kucharyna. Analiza przypadków użycia}. Wrocław, LPO IIUWr 2012.
+   \bibitem{SLO} Agnieszka Góralczyk, Adrian Dyliński, Dominik Bruliński, {\it Dokumentacja projektu Podręczna
+      kucharyna. Słownik}. Wrocław, LPO IIUWr 2012.
+\end{thebibliography}
+
+
+\end{document}
