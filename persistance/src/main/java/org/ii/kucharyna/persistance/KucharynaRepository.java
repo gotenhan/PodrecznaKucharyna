@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 import org.ii.kucharyna.persistance.communication.MongoLabCommunicator;
 import org.ii.kucharyna.persistance.communication.MongoRequest;
 import org.ii.kucharyna.persistance.communication.MongoRequestFactory;
+import org.ii.kucharyna.persistance.converters.RecipeModelJsonConverter;
 import org.ii.kucharyna.persistance.models.RecipeModel;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -80,12 +81,8 @@ public class KucharynaRepository {
         KucharynaRepository.databaseName,
         KucharynaRepository.recipesCollectionName);
     String response = communicator.sendReceive(request);
-    BsonFactory factory = new BsonFactory();
-    ObjectMapper mapper = new ObjectMapper(factory);
     try {
-      recipesCache = mapper.readValue(response,
-          new TypeReference<List<RecipeModel>>() {
-          });
+      recipesCache = RecipeModelJsonConverter.fromJsonArray(response);
     } catch (JsonParseException ex) {
       logException(ex);
     }

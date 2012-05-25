@@ -17,8 +17,9 @@ public class RecipePresenter {
     if(view == null)
       throw new NullPointerException("RecipePresenter#constructor: view cannot be null");
     this.repository = repository;
-    if(modelNr>=0)
-      this.model = this.repository.getRecipe(modelNr);
+    this.modelNr = modelNr;
+    if(this.modelNr>=0)
+      this.model = this.repository.getRecipe(this.modelNr);
     else
       this.model = new RecipeModel();
     this.view = view;
@@ -31,7 +32,7 @@ public class RecipePresenter {
     this.model.setTags(this.view.getRecipeTags());
     
     // TODO add security check if model is still in the repository
-    if(this.modelNr > 0)
+    if(this.modelNr >= 0)
       repository.update(this.model, this.modelNr);
     else
       modelNr = repository.addRecipe(this.model);

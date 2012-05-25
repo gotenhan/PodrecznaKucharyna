@@ -1,130 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/recipeNameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="Nazwa" />
-
-    <EditText
-        android:id="@+id/recipeName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/recipeNameLabel"
-        android:ems="9" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/numberOfPortionsLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/numberOfPortions"
-        android:layout_alignParentTop="true"
-        android:text="# porcji" />
-
-    <EditText
-        android:id="@+id/numberOfPortions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/recipeNameLabel"
-        android:ems="4" />
-
-    <ListView
-        android:id="@android:id/list"
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_below="@+id/recipeName" >
-    </ListView>
-
-    <TextView
-        android:id="@+id/ingredientAmmountLabel"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@android:id/list"
-        android:text="ilość" />
+        android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/ingredientAmmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ingredientAmmountLabel"
-        android:ems="4" />
+        <TextView
+            android:id="@+id/recipeNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="Nazwa" />
 
-    <TextView
-        android:id="@+id/ingredientNameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ingredientName"
-        android:layout_below="@android:id/list"
-        android:text="składnik" />
+        <EditText
+            android:id="@+id/recipeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:ems="9" >
 
-    <EditText
-        android:id="@+id/ingredientName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/ingredientAmmount"
-        android:layout_alignBottom="@+id/ingredientAmmount"
-        android:layout_toRightOf="@+id/ingredientAmmount"
-        android:ems="9" />
+            <requestFocus />
+        </EditText>
 
-    <Button
-        android:id="@+id/addingIngredient"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/ingredientName"
-        android:layout_toRightOf="@+id/ingredientName"
-        android:text="  +  "
-        android:textSize="16dip"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/descriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Opis potrawy" />
 
-    <TextView
-        android:id="@+id/preparationDescriptionLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ingredientAmmount"
-        android:text="opis wykonania potrawy" />
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:ems="10"
+            android:inputType="textMultiLine" />
 
-    <EditText
-        android:id="@+id/preparationDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/deleting"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/preparationDescriptionLabel"
-        android:ems="10"
-        android:inputType="textMultiLine" />
+        <TextView
+            android:id="@+id/preparationDescriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Instrukcje" />
 
-    <Button
-        android:id="@+id/saving"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/deleting"
-        android:text="  ZAPISZ  " />
+        <EditText
+            android:id="@+id/preparationDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:ems="10"
+            android:inputType="textMultiLine" />
 
-    <Button
-        android:id="@+id/deleting"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="  USUŃ  " />
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/saving"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/deleting"
+                android:text="Zapisz" />
+
+            <Button
+                android:id="@+id/deleting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:text="Anuluj" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

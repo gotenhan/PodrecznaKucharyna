@@ -4,10 +4,11 @@
     android:versionCode="1"
     android:versionName="1.0" >
     <uses-sdk android:minSdkVersion="10" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    
     <application
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" >
+        android:label="@string/app_name">
         <activity
             android:name="org.ii.kucharyna.app.activities.MainActivity"
             android:label="@string/app_name"

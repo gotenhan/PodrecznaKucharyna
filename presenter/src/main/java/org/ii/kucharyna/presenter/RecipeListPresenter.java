@@ -44,6 +44,7 @@ public class RecipeListPresenter {
   }
 
   public void refreshView(){
+    updateNameList();
     this.view.setRecipeNamesList(this.nameList);
   }
 
