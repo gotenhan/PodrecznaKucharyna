@@ -1,0 +1,134 @@
+\documentclass[12pt,leqno, twoside]{mwart}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{a4wide}
+%-------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1 }}
+\fancyhead[LE]{Podręczna kucharyna. Harmonogram}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%-------------------------------------------------------------------------
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad #1.}
+\makeatother
+%-------------------------------------------------------------------------
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+Licencjacka Pracownia Oprogramowania \\ Instytut
+Informatyki Uniwersytetu Wrocławskiego \\
+\vspace{4cm}
+\Large Agnieszka Góralczyk, Adrian Dyliński, Dominik Bruliński \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu\\ \textbf{Podręczna kucharyna}\\ \Large Harmonogram\\
+\vspace{1cm}
+\normalsize \today \\
+\vspace{2cm}
+\normalsize Wersja 0.01
+\end{center}
+
+\newpage
+
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. & Data       & Nr wersji & Autor               & Zmiana \\ \hline
+		1.   & 2012-05-05 & 0.01 & Adrian Dyliński, Aron Mojsak & Utworzenie dokumentu \\ \hline
+		2.  & 2012-05-20 & 0.02 & Dominik Bruliński & Poprawki językowe \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Wprowadzenie}
+Dokument przedstawia harmonogram prac nad projektem \emph{Podręczna kucharyna}.
+
+\section{Harmonogram prac}
+
+Daty przedstawione poniżej prezentują końcowe terminy wykonania poszczególnych prac.
+
+
+\begin{table}
+	\centering
+		\begin{tabular}{|p{4cm}|p{11cm}|}
+		\hline
+		\bf{Data}            & \bf{Zadanie} \\ \hline
+		5 marca 2012 r. & określenie wymagań i przygotowanie dokumentów: przypadki użycia, wykaz dokumentów \\ \hline
+		
+		18 marca 2012 r. & przygotowanie analizy rozwiązania \\ \hline
+		
+		16 kwietnia 2012 r. & sporządzenie planu testowania \\ \hline
+		
+		19 kwietnia 2012 r. & wykonanie poprawek i ostateczna weryfikacja dokumentacji przedsięwzięcia \\ \hline
+		
+		20 kwietnia 2012 r. & przygotowanie środowiska programistycznego (uruchomienie serwera testowego i~systemu zarządzania rozwojem oprogramowania), przypisanie zadań poszczególnym osobom zaangażowanym w realizację projektu \\ \hline
+		25 kwietnia 2012 r. & umożliwienie komunikacji z bazą danych \\ \hline
+		
+		26 kwietnia 2012 r. & zaprojektowanie interfejsu użytkownika  \\ \hline
+		
+		30 kwietnia 2012 r. & zaprogramowanie fragmentu interfejsu użytkownika pozwalającego na zarządzanie przepisami \\ \hline
+		
+		7 maja 2012 r. & implementacja komunikacji między modułami projektu \\ \hline
+		
+		12 maja 2012 r. & umożliwienie dodawania, zmiany i usuwania przepisów \\ \hline
+		
+		14 maja 2012 r. & umożliwienie przeglądania przepisów \\ \hline
+		
+		27 maja 2012 r. & umożliwienie zarządzania składnikami i dostosowanie interfejsu użytkownika\\ \hline
+		
+		3 czerwca 2012 r. & umożliwienie nadawania etykiet posiłkom \\ \hline
+		
+		10 czerwca 2012 r. & umożliwienie wyszukiwania przepisów za pomocą etykiet \\ \hline
+		
+		15 czerwca 2012 r. & implementacja automatycznego etykietowania przepisów według użytych składników \\ \hline
+		
+		22 czerwca 2012 r. & testowanie aplikacji i~poprawianie błędów \\ \hline
+		
+		24 czerwca 2012 r. & udostępnienie aplikacji użytkownikom do pobrania ze strony projektu \\ \hline
+		
+		1 lipca 2012 r. & umożliwienie określania wartości kalorycznych posiłków na podstawie użytych składników \\ \hline
+
+		10 lipca 2012 r. & możliwość obliczania wartości odżywczych niezależnie od użytych miar wagi lub objętości \\ \hline
+		
+		27 lipca 2012 r. & możliwość dodawania zdjęć składników i posiłków \\ \hline
+		
+		10 sierpnia 2012 r. & możliwość zakładania kont użytkowników \\ \hline
+		
+		25 sierpnia 2012 r. & możliwość zarządzania uprawnieniami użytkowników \\ \hline
+		
+		30 sierpnia 2012 r. & możliwość komentowania przepisów \\ \hline
+		
+		10 września 2012 r. & testowanie aplikacji \\ \hline
+		
+		15 września 2012 r. & udostępnie aplikacji ograniczonej liczbie użytkowników w celu testów \\ \hline
+		
+		29 września 2012 r. & usunięcie błędów i wprowadzenie poprawek \\ \hline
+		
+		30 września 2012 r. & udostępnienie aplikacji za pośrednictwem Google Play\\ \hline
+		
+		
+		\end{tabular}
+\end{table}
+
+
+\end{document}

@@ -1,3 +1,0 @@
-\contentsline {section}{\numberline {1\relax .\kern .5em }Odbiorca aplikacji}{3}
-\contentsline {section}{\numberline {2\relax .\kern .5em }Konkurencyjne aplikacje}{3}
-\contentsline {section}{\numberline {3\relax .\kern .5em },,Podr\IeC {\k e}czna kucharyna'' na tle konkurencji}{4}

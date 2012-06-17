@@ -1,4 +1,0 @@
-\select@language {polish}
-\contentsline {section}{\numberline {1\relax .\kern .5em }Odbiorca aplikacji}{2}
-\contentsline {section}{\numberline {2\relax .\kern .5em }Konkurencyjne aplikacje}{2}
-\contentsline {section}{\numberline {3\relax .\kern .5em },,Podr\IeC {\k e}czna kucharyna'' na tle konkurencji}{3}
