@@ -1,0 +1,84 @@
+\documentclass[12pt,leqno, twoside]{mwart}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{a4wide}
+%-------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1 }}
+\fancyhead[LE]{Podręczna kucharyna. Szablon}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%-------------------------------------------------------------------------
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad #1.}
+\makeatother
+%-------------------------------------------------------------------------
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+Licencjacka Pracownia Oprogramowania \\ Instytut
+Informatyki Uniwersytetu Wrocławskiego \\
+\vspace{4cm}
+\Large Agnieszka Góralczyk, Adrian Dyliński, Dominik Bruliński \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu\\ \textbf{Podręczna kucharyna}\\ \Large Warunki korzystania z programu i oprogramowanie firm trzecich użyte w aplikacji \emph{Podręczna kucharyna} \\
+\vspace{1cm}
+\normalsize \today \\
+\vspace{2cm}
+\normalsize Wersja 0.01
+\end{center}
+
+\newpage
+\usepackage{hyperref}
+\section{Warunki korzystania z aplikacji \emph{Podręczna kucharyna} }
+\section{Oprogramowanie firm trzecich użyte w aplikacji \emph{Podręczna kucharyna} }
+\subsection{MongoLab}
+\emph{MongoLab} oferuje hosting baz danych z użyciem systemu zarządzania bazami danych \emph{MongoDB}.
+Hosting jest dostępny w kilku wariantach cenowych.
+Aplikacja \emph{Podręczna kucharyna} w wersji testowej korzysta z planu bezpłatnego.
+Oferuje on do 250 MB na bazy danych.
+Udostępnia także darmowy interfejs programowania aplikacji z wykorzystaniem wzorca projektowego REST. \\
+Szczegóły wariantów cenowych można poznać pod adresem \url{"https://mongolab.com/about/products/#/pricing"}. \\
+Warunki korzystania z usługi znajdują się pod adresem \url{"https://mongolab.com/legal/terms/"}\\
+Polityka prywatności jest pod adresem \url{"https://mongolab.com/legal/privacy/"}
+\subsection{HttpClient}
+HttpClient jest zestawem klas ułatwiającycm programowanie aplikacji sieciowych.
+Wchodzi on w skład biblioteki komponentów Apache Commons wydawanej przez Fundację Apache (Apache Software Foundation). \\
+Warunki korzystania z oprogramowania znajdują się pod adresem \url{"http://www.apache.org/licenses/LICENSE-2.0"}.
+\subsection{Jackson i bson4jackson}
+\emph{Jackson} jest zestawem klas umożliwiającym łatwą obsługę formatu danuch JSON.
+Jest to tekstowy format danych oparty na składni języka \emph{JavaScript}, szeroko rozpowszechniony w aplikacjach sieciowych ze względu na prostotę użytkowania. \\
+\emph{Bson4Jackson} jest zestawem klas rozszerzających Jackson o możliwość obsługi formatu BSON.
+Jest on binarnym zapisem formatu JSON i eliminuje jego główną wadę czyli rozmiar.\\
+Oba zestawy klas wydawane są na zasadach licencji Apache w wersji 2.0.
+Znajduje się ona pod adresem \url{"http://www.apache.org/licenses/LICENSE-2.0.txt"}.
+\section{Oprogramowanie firm trzecich użyte podczas pisania i testowania aplikacji \emph{Podręczna kucharyna}}
+\subsection{Eclipse IDE 3.7 (Indigo)}
+Zintegrowane środowisko programistyczne zaprogramowane z użyciem biblioteki Eclipse. Składa się ono z szeregu dodatków wspomagających pisanie aplikacji w różnych językach, w tym w języku Java. Wszystkie dodatki używane przy pisaniu aplikacji \emph{Podręczna kucharyna} wdawane są na Publicznej Licencji Eclipse w wersji 1.0.
+Dostępna jest ona pod adresem \url{"http://www.eclipse.org/legal/epl-v10.html"}
+\subsection{Android Software Development Kit i Android Developer Tools}
+Android Developer Tools jest to zestaw narzędzi i dodatków do Eclipse IDE wspomagających programowanie aplikacji na system operacyjny Android. Zawiera między innymi odpluskwiacz, emulator urządzeń mobilnych, program do zarządzania wersjami Android Software Development Kit. \\
+Android Software Development Kit jest to zbiór komponentów i klas wykorzystywanych do programowania aplikacji na system operacyjny Android. Jest on wydawany w kilkunastu wersjach. Każda z nich odpowiada jednej z wersji systemu operacyjnego Android. Wyższe wersje zawierają więcej funkcji i są obsługiwane tylko przez nowsze urządzenia.
+Aplikacja \emph{Podręczna kucharyna} korzysta z Android SDK w wersji 10, co odpowiada wersji systemu operacyjnego 2.3.3. Urządzenia z nowszym systemem operacyjnym także są obsługiwane. \\
+Warunki korzystania z Android SDK i Android Developer Tools można znaleźć pod adresem \url{"http://developer.android.com/legal.html"}
+\subsection{JUnit}
+Oprogramowania wspomagające pisanie testów jednostkowych. Udostępnia klasy i metody pozwalające w łatwy sposób opisać warunki wejściowe i wyjściowe danej metody. \\
+Licencja i zasady użytkowania znajdują się pod adresem \url{"http://junit.sourceforge.net/cpl-v10.html"}.
+Stronę projektu można znaleźć pod adresem \url{"http://junit.sourceforge.net/"}.
+\subsection{mockwebserver}
+Oprogramowanie wspomagające testowanie aplikacji sieciowych. Umożliwia zwrócenie z góry ustalonej odpowiedzi zamiast prawdziwego zasobu dostępnego przez sieć. Dzięki temu możliwe jest testowania aplikacji niezależnie od połączenia z siecią czy danych zwracanych przez wykorzystywane serwisy. \\
+Warunki korzystania z oprogramowania znajdują się pod adresem \url{"http://www.apache.org/licenses/LICENSE-2.0"}. \\
+Stronę projektu można znaleźć pod adresem \url{"http://code.google.com/p/mockwebserver/"}.
