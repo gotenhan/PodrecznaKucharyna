@@ -1,5 +1,6 @@
 \documentclass[12pt,leqno, twoside]{mwart}
 \usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
 \usepackage{polski}
 \usepackage{a4wide}
 %-------------------------------------------------------------------------
@@ -25,6 +26,8 @@
 \renewcommand{\figurename}{Rys.}
 \renewcommand{\labelitemi}{-}
 
+\def\tm{\leavevmode\hbox{$\rm {}^{TM}$}}
+
 \begin{document}
 
 \thispagestyle{empty}
@@ -38,7 +41,7 @@ Informatyki Uniwersytetu Wrocławskiego \\
 \vspace{1cm}
 \normalsize \today \\
 \vspace{2cm}
-\normalsize Wersja 0.01
+\normalsize Wersja 0.03
 \end{center}
 
 \newpage
@@ -50,7 +53,9 @@ Informatyki Uniwersytetu Wrocławskiego \\
 		\begin{tabular}{|r|c|c|l|l|}
 		\hline
 		Lp. & Data       & Nr wersji & Autor               & Zmiana \\ \hline
-		1.   & 2012-05-22 & 0.01 & Dominik Bruliński & Utworzenie dokumentu \\ \hline
+		1.   & 2012-04-10 & 0.01 & Dominik Bruliński & Utworzenie dokumentu \\ \hline
+		2. & 2012-04-16 & 0.02 & Agnieszka Góralczyk & Poprawki językowe\\ \hline
+		3 & 2012-06-21 & 0.03 & Dominik Bruliński & Uzupełnienie treści \\ \hline
 		\end{tabular}
 \end{table}
 
@@ -60,23 +65,28 @@ Informatyki Uniwersytetu Wrocławskiego \\
 \newpage
 
 \section{Wstęp}
-\noindent Dokument ten zawiera opis i~plan testowania oprogramowania Podręczna kucharyna w~każdej fazie powstawania tego
-oprogramowania.
+\noindent Dokument ten zawiera opis i~plan testowania oprogramowania Podręczna kucharyna w~każdej fazie powstawania tego oprogramowania. W dokumencie stosuje się zamiennie terminy aplikacja, program jako oznaczenia aplikacji „Podręczna kucharyna”, chyba, że z kontekstu wyraźnie wynika inaczej.
 
 \section{Testy podczas implementacji}
-\noindent Programista uczestniczący w projekcie odpowiada za dokładne przetestowanie pisanego przez siebie kodu
-źródłowego. Testy powinny zostać wykonane przed umieszczeniem danego fragmentu w~magazynie systemu kontroli wersji.
+\noindent Programista uczestniczący w projekcie odpowiada za dokładne przetestowanie pisanego przez siebie kodu źródłowego. Testy powinny zostać wykonane przed umieszczeniem danego fragmentu w~magazynie systemu kontroli wersji. 
 Wybór między automatycznym i ręcznym sposobem wykonania tych testów pozostaje w~gestii programistów.
 
+\section{Testy specyficzne dla systemu Android\tm}
+\noindent Ze względu na specyfikę systemu Android\tm oraz urządzeń mobilnych wykonane zostaną odpowiednie testy. Każdy ekran aplikacji zostanie przetestowany sprawdzająć reakcję na:
+\begin{itemize}
+  \item zmianę orientacji urządzenia,
+  \item nieoczekiwane zakończenie aplikacji z~powodu braku pamięci, rozładowania baterii, zabicie procesu przez użytkownika za pomocą menedżera zadań itp.,
+  \item opuszczenie aplikacji za pomocą wbudowanego w~urządzenie przycisku ,,Ekran główny'' i~późniejszy powrót do aplikacji
+  \item zmiany w~konfiguracji urządzenia (np. zmianę języka, formatu wyświetlania daty itp.)
+\end{itemize}
+
+\noindent \\Dla każdej z wyżej wymienionych sytuacji sprawdzone zostanie czy aplikacja poprawnie powraca do stanu sprzed zajścia danego zdarzenia i czy kontynuuje zaplanowane działanie. Testowany będzie dodatkowo wpływ działania aplikacji na żywotność baterii.
+
+
 \section{Testowanie funkcjonalności}
-\noindent Przed zakończeniem prac nad projektem Podręczna kucharyna zostaną wykonane testy, mające na celu sprawdzenie
-poprawności implementacji poszczególnych przypadków użycia. Przypadki użycia są opisane w~\cite{APU}. Testy te zostaną wykonane
-przez członków zespołu i~nie będą zautomatyzowane. Osoba testująca będzie wykonywała poszczególne przypadki użycia
-,,krok po kroku''. Tester będzie sprawdzał, czy zachowanie oprogramowania odpowiada założeniom i~stawianym przed
-oprogramowaniem Podręczna kucharyna wymaganiom. W celu przetestowania zachowania oprogramowania w sytuacjach
-niepożądanych tester będzie postępował niezgodnie z przypadkami użycia. Zakłada się, że inforamacje o błędach,
-niepowodzeniach wykonania operacji zostaną przekazane w postaci komunikatów. Każdy z~przypadków testowych jest opisany w
-poniższych podrozdziałach.
+\noindent Przed zakończeniem prac nad projektem Podręczna kucharyna zostaną wykonane testy, mające na celu sprawdzenie poprawności implementacji poszczególnych przypadków użycia. Przypadki użycia są opisane w~\cite{APU}. Testy te zostaną wykonane przez członków zespołu i~nie będą zautomatyzowane. Osoba testująca będzie wykonywała poszczególne przypadki użycia
+,,krok po kroku''. Tester będzie sprawdzał, czy zachowanie oprogramowania odpowiada założeniom i~stawianym przed oprogramowaniem Podręczna kucharyna wymaganiom. W celu przetestowania zachowania oprogramowania w sytuacjach
+niepożądanych tester będzie postępował niezgodnie z przypadkami użycia. Zakłada się, że inforamacje o błędach, niepowodzeniach wykonania operacji zostaną przekazane w postaci komunikatów. Każdy z~przypadków testowych jest opisany w poniższych podrozdziałach.
 
 \subsection{Uruchomienie aplikacji}
 \subsubsection{Działania testujące}

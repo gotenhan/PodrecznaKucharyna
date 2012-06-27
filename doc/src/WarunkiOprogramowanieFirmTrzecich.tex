@@ -2,13 +2,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage{polski}
 \usepackage{a4wide}
+\usepackage{hyperref}
 %-------------------------------------------------------------------------
 %paginy!
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1 }}
-\fancyhead[LE]{Podręczna kucharyna. Szablon}
+\fancyhead[LE]{Podręczna kucharyna. Warunki korzystania i oprogramowanie firm trzecich}
 \fancyhead[RO]{\rightmark}
 \fancyfoot{} % clear all footer fields
 \fancyfoot[LE,RO]{}
@@ -24,6 +25,8 @@
 %-------------------------------------------------------------------------
 \renewcommand{\figurename}{Rys.}
 \renewcommand{\labelitemi}{-}
+
+\def\tm{\leavevmode\hbox{$\rm {}^{TM}$}}
 
 \begin{document}
 
@@ -42,7 +45,7 @@ Informatyki Uniwersytetu Wrocławskiego \\
 \end{center}
 
 \newpage
-\usepackage{hyperref}
+
 \section{Warunki korzystania z aplikacji \emph{Podręczna kucharyna} }
 \section{Oprogramowanie firm trzecich użyte w aplikacji \emph{Podręczna kucharyna} }
 \subsection{MongoLab}
@@ -70,8 +73,8 @@ Znajduje się ona pod adresem \url{"http://www.apache.org/licenses/LICENSE-2.0.t
 Zintegrowane środowisko programistyczne zaprogramowane z użyciem biblioteki Eclipse. Składa się ono z szeregu dodatków wspomagających pisanie aplikacji w różnych językach, w tym w języku Java. Wszystkie dodatki używane przy pisaniu aplikacji \emph{Podręczna kucharyna} wdawane są na Publicznej Licencji Eclipse w wersji 1.0.
 Dostępna jest ona pod adresem \url{"http://www.eclipse.org/legal/epl-v10.html"}
 \subsection{Android Software Development Kit i Android Developer Tools}
-Android Developer Tools jest to zestaw narzędzi i dodatków do Eclipse IDE wspomagających programowanie aplikacji na system operacyjny Android. Zawiera między innymi odpluskwiacz, emulator urządzeń mobilnych, program do zarządzania wersjami Android Software Development Kit. \\
-Android Software Development Kit jest to zbiór komponentów i klas wykorzystywanych do programowania aplikacji na system operacyjny Android. Jest on wydawany w kilkunastu wersjach. Każda z nich odpowiada jednej z wersji systemu operacyjnego Android. Wyższe wersje zawierają więcej funkcji i są obsługiwane tylko przez nowsze urządzenia.
+Android Developer Tools jest to zestaw narzędzi i dodatków do Eclipse IDE wspomagających programowanie aplikacji na system operacyjny Android\tm. Zawiera między innymi odpluskwiacz, emulator urządzeń mobilnych, program do zarządzania wersjami Android Software Development Kit. \\
+Android Software Development Kit jest to zbiór komponentów i klas wykorzystywanych do programowania aplikacji na system operacyjny Android\tm. Jest on wydawany w kilkunastu wersjach. Każda z nich odpowiada jednej z wersji systemu operacyjnego Android\tm. Wyższe wersje zawierają więcej funkcji i są obsługiwane tylko przez nowsze urządzenia.
 Aplikacja \emph{Podręczna kucharyna} korzysta z Android SDK w wersji 10, co odpowiada wersji systemu operacyjnego 2.3.3. Urządzenia z nowszym systemem operacyjnym także są obsługiwane. \\
 Warunki korzystania z Android SDK i Android Developer Tools można znaleźć pod adresem \url{"http://developer.android.com/legal.html"}
 \subsection{JUnit}
@@ -82,3 +85,5 @@ Stronę projektu można znaleźć pod adresem \url{"http://junit.sourceforge.net
 Oprogramowanie wspomagające testowanie aplikacji sieciowych. Umożliwia zwrócenie z góry ustalonej odpowiedzi zamiast prawdziwego zasobu dostępnego przez sieć. Dzięki temu możliwe jest testowania aplikacji niezależnie od połączenia z siecią czy danych zwracanych przez wykorzystywane serwisy. \\
 Warunki korzystania z oprogramowania znajdują się pod adresem \url{"http://www.apache.org/licenses/LICENSE-2.0"}. \\
 Stronę projektu można znaleźć pod adresem \url{"http://code.google.com/p/mockwebserver/"}.
+
+\end{document}

@@ -1,0 +1,98 @@
+\documentclass[12pt,leqno, twoside]{mwart}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{a4wide}
+%-------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1 }}
+\fancyhead[LE]{Podręczna kucharyna. Słownik}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%-------------------------------------------------------------------------
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad #1.}
+\makeatother
+%-------------------------------------------------------------------------
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\def\tm{\leavevmode\hbox{$\rm {}^{TM}$}}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+Licencjacka Pracownia Oprogramowania \\ Instytut
+Informatyki Uniwersytetu Wrocławskiego \\
+\vspace{4cm}
+\Large Agnieszka Góralczyk, Adrian Dyliński, Dominik Bruliński \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu\\ \textbf{Podręczna kucharyna}\\ \Large Słownik\\
+\vspace{1cm}
+\normalsize \today \\
+\vspace{2cm}
+\normalsize Wersja 0.06
+\end{center}
+
+\newpage
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. & Data       & Nr wersji & Autor               & Zmiana \\ \hline
+		1.   & 2012-03-20 & 0.01 & Dominik Bruliński & Utworzenie dokumentu \\ \hline
+		2. & 2012-04-17 & 0.02 & Agnieszka Góralczyk & Uzupełnienie treści \\ \hline
+		3. & 2012-04-25 & 0.03 & Adrian Dyliński & Uzupełnienie treści \\ \hline
+		4. & 2012-05-12 & 0.04 & Adrian Dyliński & Uzupełnienie treści \\ \hline
+		5. & 2012-06-22 & 0.05 & Agnieszka Góralczyk & Uzupełnienie treści \\ \hline
+		6. & 2012-06-22 & 0.06 & Dominik Bruliński & Uzupełnienie treści \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Wstęp}
+	Niniejszy dokument ma na celu prezentację definicji pojęć używanych w dokumentacji projektu \emph{Podręczna kucharyna}.
+	\section{Słownik pojęć}
+	
+	\begin{description}
+	
+	\item[BSON] --- ang. Binary JSON, format wymiany danych używany głównie w MongoDB zdobywający coraz większą popularność
+	
+	\item[hosting] --- udostępnianie przez dostawcę usług internetowych zasobów serwerowni
+	
+	\item[interfejs użytkownika] --- ang. User Interface (UI), część oprogramowania zajmującą się obsługą urządzeń wejścia/wyjścia przeznaczonych do interakcji z użytkownikiem
+	
+	\item[JSON] --- ang. JavaScript Object Notation, format tekstowy będący podzbiorem języka JavaScript używany do wymiany danych
+	
+	\item[MVP] --- ang. Model–View–Presenter, architektoniczny wzorzec projektowy bazujący na MVC (Model–View–Controller). Zakłada on podział aplikacji na trzy główne części: model(reprezentacja logiki aplikacji), widok(wyświetlanie modelu za pomocą interfejsu użytkownika), prezenter(dwustronna komunikacja między modelem a widokiem)
+
+	\item[REST] --- ang. Representational State Transfer, wzorzec architektury oprogramowania dla raplikacji klient - serwer zakłada bezstanowość, warstwowość, jednorodny interfejs, możliwość używania bufora podręcznego
+	
+	\item[test jednostkowy] --- ang. unit test, metoda testowania tworzonego oprogramowania poprzez wykonywanie testów weryfikujących poprawność działania pojedynczych elementów programu
+	
+	\item[testy akceptacyjne] --- testy, których celem nie jest wykrycie błędów a jedynie uzyskanie formalnego potwierdzenia wykonania oprogramowania odpowiedniej jakości
+	
+	\item[XML] -- ang. Extensible Markup Language, uniwersalny język formalny przeznaczony do reprezentowania różnych danych w strukturalizowany sposób
+	
+	\item[zintegrowane środowisko programistyczne] --- ang. Integrated Development Environment (IDE), aplikacja lub zespół aplikacji (środowisko) służących do tworzenia, modyfikowania, testowania i konserwacji oprogramowania
+	
+	\end{description}
+
+
+\end{document}
