@@ -1,0 +1,56 @@
+\documentclass[12pt,leqno, twoside]{mwart}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{a4wide}
+%-------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1 }}
+\fancyhead[LE]{Podręczna kucharyna. Architektura aplikacji}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%-------------------------------------------------------------------------
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad #1.}
+\makeatother
+%-------------------------------------------------------------------------
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+Licencjacka Pracownia Oprogramowania \\ Instytut
+Informatyki Uniwersytetu Wrocławskiego \\
+\vspace{4cm}
+\Large Agnieszka Góralczyk, Adrian Dyliński, Dominik Bruliński \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu\\ \textbf{Podręczna kucharyna}\\ \Large Architektura aplikacji\\
+\vspace{1cm}
+\normalsize \today \\
+\vspace{2cm}
+\normalsize Wersja 0.01
+\end{center}
+
+\newpage
+\section{Wzorzec architektoniczny Model Widok Prezenter w aplikacji Podręczna kucharyna}
+Aplikacja Podręczna kucharyna tworzona jest z wykorzystaniem wzoraca architektonicznego Model Widok Prezenter.
+Dzięki temu w łatwy sposób można podzielić pracę na poszczegółnych uczestników projektu. 
+\subsection{Opis wzorca MWP}
+Wzorzec MWP zakłada podział aplikacji na trzy współpracujące ze sobą części:
+\begin{itemize}
+\item[Model] Część ta odpowiada za reprezentację danych w pamięci. Oprócz struktur przechowujących dane zawiera także metody pozwalające na nich operować: zmieniać właściwości, dodawać nowe i usuwać stare dane.
+\item[Widok] Część odpowiedzialna za interakcję z użytkownikiem koncowym. Wyświetla dane w atrakcyjny wizualnie sposób, udostępnia interfejs, który umożliwia użytkownikowi dokonanie zmian w danych. Informuje pozostałe części programu o akcjach użytkownika.
+\item[Prezenter] Odpowiada za komunikację między modułem modelu i widoku. Pobiera dane z modelu i powiadamia widok, że powinien uaktualnić to co jest przedstawiane użytkownikowi.
+\end{itemize}
+\end{document}
