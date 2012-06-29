@@ -1,5 +1,6 @@
 \documentclass[12pt,leqno, twoside]{mwart}
 \usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
 \usepackage{polski}
 \usepackage{a4wide}
 %-------------------------------------------------------------------------
@@ -8,7 +9,7 @@
 \pagestyle{fancy}
 \fancyhead{}
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1 }}
-\fancyhead[LE]{Podręczna kucharyna. Analiza rynku}
+\fancyhead[LE]{Podręczna kucharyna. Analiza przypadków użycia}
 \fancyhead[RO]{\rightmark}
 \fancyfoot{} % clear all footer fields
 \fancyfoot[LE,RO]{}
@@ -25,6 +26,8 @@
 \renewcommand{\figurename}{Rys.}
 \renewcommand{\labelitemi}{-}
 
+\def\tm{\leavevmode\hbox{$\rm {}^{TM}$}}
+
 \begin{document}
 
 \thispagestyle{empty}
@@ -34,7 +37,7 @@ Informatyki Uniwersytetu Wrocławskiego \\
 \vspace{4cm}
 \Large Agnieszka Góralczyk, Adrian Dyliński, Dominik Bruliński \\
 \vspace{0.5cm}
-\huge Dokumentacja projektu\\ \textbf{Podręczna kucharyna}\\ \Large Analiza rynku\\
+\huge Dokumentacja projektu\\ \textbf{Podręczna kucharyna}\\ \Large Analiza przypadków użycia\\
 \vspace{1cm}
 \normalsize \today \\
 \vspace{2cm}
@@ -102,7 +105,7 @@ Użytkownik wybiera przepisy, zaznacza, które składniki ma w domu, i generuje 
   \item[Spiżarnia] -- użytkownik wybiera składniki, które ma w~domu. Zazwyczaj są to składniki, które rzadko się kończą. Przykładowe składniki w~spiżarni to: pieprz, sól, cukier puder. Dane ze spiżarni uwzględniane są przy tworzeniu listy zakupów -- składniki posiadane przez użytkownika nie są do niej dodawane.
 \end{description}
 \section{Wstępne założenia techniczne}
-,,Podręczna kucharyna'' w~pierwszej kolejności jest wykonywana do używania pod kontrolą systemu operacyjnego Android. Projektowana jest jednak z~myślą o~łatwym dostosowaniu także do innych systemów operacyjnych.
+,,Podręczna kucharyna'' w~pierwszej kolejności jest wykonywana do używania pod kontrolą systemu operacyjnego Android\tm. Projektowana jest jednak z~myślą o~łatwym dostosowaniu także do innych systemów operacyjnych.
 Do przechowywania bazy danych będzie użyty jak najprostszy system zarządzania bazą danych, niekoniecznie obsługujący standard SQL. Szczegóły zostaną ustalone po dokładnym określeniu wymagań. Interfejs graficzny będzie wykonany za pomocą zewnętrznej biblioteki umożliwiającej łatwą adaptację do innych systemów przenośnych.
 
 \end{document}

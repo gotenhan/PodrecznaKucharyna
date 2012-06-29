@@ -1,5 +1,6 @@
 \documentclass[12pt,leqno, twoside]{mwart}
 \usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
 \usepackage{polski}
 \usepackage{a4wide}
 %-------------------------------------------------------------------------
@@ -24,6 +25,7 @@
 %-------------------------------------------------------------------------
 \renewcommand{\figurename}{Rys.}
 \renewcommand{\labelitemi}{-}
+\def\tm{\leavevmode\hbox{$\rm {}^{TM}$}}
 
 \begin{document}
 
@@ -42,3 +44,26 @@ Informatyki Uniwersytetu Wrocławskiego \\
 \end{center}
 
 \newpage
+
+
+%trzeba zmieniać historię zmian, strone tytułowa i \fancyhead :)
+
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. & Data       & Nr wersji & Autor               & Zmiana \\ \hline
+		1.   & 2012-04-10 & 0.01 & Dominik Bruliński & Utworzenie dokumentu \\ \hline
+		2. & 2012-04-16 & 0.02 & Agnieszka Góralczyk & Uzupełnienie treści i poprawki językowe\\ \hline
+		3 & 2012-06-21 & 0.03 & Dominik Bruliński & Uzupełnienie treści \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\end{document}

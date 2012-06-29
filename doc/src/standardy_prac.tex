@@ -1,0 +1,104 @@
+\documentclass[12pt,leqno, twoside]{mwart}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{a4wide}
+%-------------------------------------------------------------------------
+%paginy!
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1 }}
+\fancyhead[LE]{Podręczna kucharyna. Standardy prac}
+\fancyhead[RO]{\rightmark}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{}
+\fancyfoot[CE]{\thepage}
+\fancyfoot[CO]{\thepage}
+\addtolength{\headheight}{1.5pt} % pionowy odstep na kreske
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.0pt}
+%-------------------------------------------------------------------------
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad #1.}
+\makeatother
+%-------------------------------------------------------------------------
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\labelitemi}{-}
+
+\def\tm{\leavevmode\hbox{$\rm {}^{TM}$}}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+Licencjacka Pracownia Oprogramowania \\ Instytut
+Informatyki Uniwersytetu Wrocławskiego \\
+\vspace{4cm}
+\Large Agnieszka Góralczyk, Adrian Dyliński, Dominik Bruliński \\
+\vspace{0.5cm}
+\huge Dokumentacja projektu\\ \textbf{Podręczna kucharyna}\\ \Large Standardy prac\\
+\vspace{1cm}
+\normalsize \today \\
+\vspace{2cm}
+\normalsize Wersja 0.02
+\end{center}
+
+\newpage
+
+
+\begin{table}
+	\centering
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp. & Data       & Nr wersji & Autor               & Zmiana \\ \hline
+		1.  & 2012-04-15 & 0.01 & Dominik Bruliński & Utworzenie dokumentu \\ \hline
+		2.  & 2012-04-16 & 0.02 & Adrian Dyliński & Poprawki językowe \\ \hline
+		\end{tabular}
+\end{table}
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Wstęp}
+	W niniejszym dokumencie wyszczególnione są wymagania odnoszące się do standardów prac
+	nad aplikacją \emph{Podręczna kucharyna}.
+
+	\section{Standardy dotyczące kodu źródłowego}
+	
+	Kod źródłówy systemu powinien spełniac następujące wymagania:
+	\begin{itemize}
+		\item języki programowania: Java, XML
+		\item nazewnictwo:
+			\begin{itemize}
+				\item wszystkie jednostki składniowe nazwane w języku angielskim,
+				\item klasy i metody publiczne: styl ,,wielbłądzi"\footnote{Wszystkie poza pierwszym słowa składowe nazwy
+					rozpoczyna się wielką literą, bez użycia odstępów, np. \emph{mojaNazwaMetody}.},
+				\item zmienne: pisane małymi literami,
+			\end{itemize}
+ 		\item rozmiar tabulacji: 4 znaki odstępu,
+		\item maksymalna długość wiersza: 78 znaków,
+		\item komentarze w kodzie źródłowym:
+			\begin{itemize}
+				\item każdy moduł systemu zawiera krótki opis,
+				\item każda definicja klasy zawiera krótki opis,
+				\item przy definicji metody opisane znaczenie argumentów wejściowych i rezultatu działania,
+				\item w ciele procedur/funkcji komentarze wymagane tylko przy skomplikowanych fragmentach kodu.
+			\end{itemize}
+	\end{itemize}
+
+	\section{Standardy dotyczące narzędzi}
+	
+	Podczas prac nad systemem jako obowiązkowe uznaje się używanie następujących narzędzi:
+	\begin{itemize}
+		\item system kontroli wersji -- zmiany powinny być wprowadzane do systemu na koniec dnia roboczego lub po zakończeniu prac nad pewnym zadaniem,
+		\item system dysponowania zadań -- system musi umożliwiać opisywanie zadań, przyporządkowywanie ich do poszczególnych osób i rejestrację czasu pracy; podjęcie przez programistę prac nad pewnym zadaniem powinno mieć odzwierciedlenie w systemie,
+		\item system śledzenia błędów -- błędy znalezione podczas testowania powinny być szczegółowo dokumentowane.
+	\end{itemize}
+
+	Ze względu na niższe koszty, zaleca się używanie darmowych narzędzi, realizujących powyższe wymagania.
+	
+\end{document}
